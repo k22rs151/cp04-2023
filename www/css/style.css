@@ -3,6 +3,9 @@
         background-color: rgb(160, 157, 161);
     }
 
+   button{
+       color: blue;
+   }
 
     #minuteStr {
         color: #ff0000;
