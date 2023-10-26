@@ -165,6 +165,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
         
     }
 
@@ -184,6 +185,8 @@
     }
 
     //cTimeの処理
+    
+   
     function digs(num){
         return (num<10)?num = "0"+num:num=num;
     }
@@ -195,9 +198,7 @@
         var msg =hour+":"+minute+":"+second;
         document.getElementById("ctime").innerHTML = msg;
     }
-    setInterval('ctime()',500);
-
-    //]]>
+    
 
     
     // ButtonAがクリックされた時の処理
@@ -224,10 +225,8 @@
     }
     // ButtonDがクリックされた時の処理
     function btnDClick(e){
+         setInterval('ctime()',500);
     }
-
-    
-
  
     // 繰り返し実行する処理
     function timer(){  
@@ -241,13 +240,7 @@
       if(rest<=0){
         active=false;
         alarm();
-      }
-
-      
-      
-
-        
-        
+      }       
     } 
 
   </script>
