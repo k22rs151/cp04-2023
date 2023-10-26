@@ -39,8 +39,10 @@
             btnCClick(e);
         });
 
-        $('#btnC').click(function(e) {
-            btnCClick(e);
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
+
         init();
     });
     
@@ -180,6 +182,23 @@
         audio.play();
 
     }
+
+    //cTimeの処理
+    function digs(num){
+        return (num<10)?num = "0"+num:num=num;
+    }
+    function ctime(){
+        var date = new Date();
+        var hour = digs(date.getHours());
+        var minute = digs(date.getMinutes());
+        var second = digs(date.getSeconds());
+        var msg =hour+":"+minute+":"+second;
+        document.getElementById("ctime").innerHTML = msg;
+    }
+    setInterval('ctime()',500);
+
+    //]]>
+
     
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
@@ -203,7 +222,12 @@
         $("#remain").html("残り時間:"+period);
         
     }
+    // ButtonDがクリックされた時の処理
+    function btnDClick(e){
+    }
+
     
+
  
     // 繰り返し実行する処理
     function timer(){  
@@ -239,8 +263,9 @@
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
-    <button id="btnD">show</button>
+    <button id="btnD">Show</button>
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
+    <div id="ctime">00:00:00</div>
 </body>
 </html>
